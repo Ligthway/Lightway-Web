@@ -7,7 +7,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { SidebarInset, SidebarProvider } from '@/components/ui/sidebar';
 import { SiteHeader } from '@/components/ui/site-header';
-import { BarChart2, Lightbulb } from 'lucide-react';
+import { FiEdit2 } from 'react-icons/fi';
 
 export default function Page() {
   return (
@@ -26,7 +26,7 @@ export default function Page() {
           <SiteHeader />
 
           <main className='flex-1 overflow-auto p-6'>
-            <div className='mx-auto max-w-7xl rounded-xl bg-white p-6 shadow'>
+            <div className='mx-auto max-w-7xl rounded-xl bg-white p-6'>
               {/* header Row */}
               <div className='mb-4 flex items-center justify-between'>
                 <h1 className='text-2xl font-semibold'>Lights</h1>
@@ -57,31 +57,262 @@ export default function Page() {
                         <h2 className='mb-5 text-lg font-medium'>
                           Carrefour AFI Brasov
                         </h2>
-                        <div className='flex gap-2 text-black'>
-                          <div className='flex flex-col rounded bg-gray-200 px-5 py-4'>
+                        <div className='flex gap-4 text-black'>
+                          <div className='flex flex-col rounded bg-gray-100 px-5 py-4 shadow-sm'>
                             <span className='text-lg font-bold'>12</span>
                             <span className='text-sm font-semibold'>
                               lights
                             </span>
                           </div>
-                          <div className='flex flex-col rounded bg-gray-200 px-5 py-4'>
+                          <div className='flex flex-col rounded bg-gray-100 px-5 py-4 shadow-sm'>
                             <span className='text-lg font-bold'>200 m²</span>
                             <span className='text-sm font-semibold'>
                               covered
                             </span>
                           </div>
+                          <div className='flex flex-col rounded bg-gray-100 px-5 py-4 shadow-sm'>
+                            <span className='font-bold'>
+                              2.5k scans this week
+                            </span>
+                          </div>
                         </div>
-                      </div>
-                    </div>
-                    <div className='flex items-center justify-between text-sm'>
-                      <div className='text-muted-foreground text-xs'>
-                        Last scanned 12m ago
+                        <div className='mt-3 flex flex-col gap-45 rounded-xl bg-gray-100 p-3 shadow-sm transition sm:flex-row sm:items-center sm:justify-between'>
+                          {/* Left: Label */}
+                          <div className='flex items-center gap-45'>
+                            <span className='text-sm font-bold font-medium text-gray-900'>
+                              LED Strip 1
+                            </span>
+                          </div>
+
+                          {/* Middle: Aisle*/}
+                          <div className='flex items-center gap-45 text-sm font-semibold text-gray-900'>
+                            <span>Aisle 34</span>
+                          </div>
+
+                          {/* Middle: Scans*/}
+                          <div className='flex items-center gap-45 text-sm font-semibold text-gray-900'>
+                            <span>1.3k scans</span>
+                          </div>
+
+                          {/* Right: Last Scanned*/}
+                          <div className='flex items-center gap-3 text-sm text-gray-900'>
+                            <span className='font-semibold whitespace-nowrap'>
+                              Last scanned 12m ago
+                            </span>
+                          </div>
+                          {/* Right: Actions*/}
+                          <div className='flex items-center gap-3 text-sm text-gray-900'>
+                            <button
+                              className='hover:text-gray-600'
+                              title='Edit'
+                            >
+                              <FiEdit2 className='h-4 w-4' />
+                            </button>
+                            <button
+                              className='font-boldhover:text-gray-600'
+                              title='More'
+                            >
+                              ⋮
+                            </button>
+                          </div>
+                        </div>
+                        <div className='mt-3 flex flex-col gap-45 rounded-xl bg-gray-100 p-3 shadow-sm transition sm:flex-row sm:items-center sm:justify-between'>
+                          {/* Left: Label */}
+                          <div className='flex items-center gap-45'>
+                            <span className='text-sm font-bold font-medium text-gray-900'>
+                              LED Strip 1
+                            </span>
+                          </div>
+
+                          {/* Middle: Aisle*/}
+                          <div className='flex items-center gap-45 text-sm font-semibold text-gray-900'>
+                            <span>Aisle 34</span>
+                          </div>
+
+                          {/* Middle: Scans*/}
+                          <div className='flex items-center gap-45 text-sm font-semibold text-gray-900'>
+                            <span>1.3k scans</span>
+                          </div>
+
+                          {/* Right: Last Scanned*/}
+                          <div className='flex items-center gap-3 text-sm text-gray-900'>
+                            <span className='font-semibold whitespace-nowrap'>
+                              Last scanned 12m ago
+                            </span>
+                          </div>
+                          {/* Right: Actions*/}
+                          <div className='flex items-center gap-3 text-sm text-gray-900'>
+                            <button
+                              className='hover:text-gray-600'
+                              title='Edit'
+                            >
+                              <FiEdit2 className='h-4 w-4' />
+                            </button>
+                            <button
+                              className='font-boldhover:text-gray-600'
+                              title='More'
+                            >
+                              ⋮
+                            </button>
+                          </div>
+                        </div>
+                        <div className='mt-3 flex flex-col gap-45 rounded-xl bg-gray-100 p-3 shadow-sm transition sm:flex-row sm:items-center sm:justify-between'>
+                          {/* Left: Label */}
+                          <div className='flex items-center gap-45'>
+                            <span className='text-sm font-bold font-medium text-gray-900'>
+                              LED Strip 1
+                            </span>
+                          </div>
+
+                          {/* Middle: Aisle*/}
+                          <div className='flex items-center gap-45 text-sm font-semibold text-gray-900'>
+                            <span>Aisle 34</span>
+                          </div>
+
+                          {/* Middle: Scans*/}
+                          <div className='flex items-center gap-45 text-sm font-semibold text-gray-900'>
+                            <span>1.3k scans</span>
+                          </div>
+
+                          {/* Right: Last Scanned*/}
+                          <div className='flex items-center gap-3 text-sm text-gray-900'>
+                            <span className='font-semibold whitespace-nowrap'>
+                              Last scanned 12m ago
+                            </span>
+                          </div>
+                          {/* Right: Actions*/}
+                          <div className='flex items-center gap-3 text-sm text-gray-900'>
+                            <button
+                              className='hover:text-gray-600'
+                              title='Edit'
+                            >
+                              <FiEdit2 className='h-4 w-4' />
+                            </button>
+                            <button
+                              className='font-boldhover:text-gray-600'
+                              title='More'
+                            >
+                              ⋮
+                            </button>
+                          </div>
+                        </div>
+                        <div className='mt-3 flex flex-col gap-45 rounded-xl bg-gray-100 p-3 shadow-sm transition sm:flex-row sm:items-center sm:justify-between'>
+                          {/* Left: Label */}
+                          <div className='flex items-center gap-45'>
+                            <span className='text-sm font-bold font-medium text-gray-900'>
+                              LED Strip 1
+                            </span>
+                          </div>
+
+                          {/* Middle: Aisle*/}
+                          <div className='flex items-center gap-45 text-sm font-semibold text-gray-900'>
+                            <span>Aisle 34</span>
+                          </div>
+
+                          {/* Middle: Scans*/}
+                          <div className='flex items-center gap-45 text-sm font-semibold text-gray-900'>
+                            <span>1.3k scans</span>
+                          </div>
+
+                          {/* Right: Last Scanned*/}
+                          <div className='flex items-center gap-3 text-sm text-gray-900'>
+                            <span className='font-semibold whitespace-nowrap'>
+                              Last scanned 12m ago
+                            </span>
+                          </div>
+                          {/* Right: Actions*/}
+                          <div className='flex items-center gap-3 text-sm text-gray-900'>
+                            <button
+                              className='hover:text-gray-600'
+                              title='Edit'
+                            >
+                              <FiEdit2 className='h-4 w-4' />
+                            </button>
+                            <button
+                              className='font-boldhover:text-gray-600'
+                              title='More'
+                            >
+                              ⋮
+                            </button>
+                          </div>
+                        </div>
+                        <div className='mt-3 flex flex-col gap-45 rounded-xl bg-gray-100 p-3 shadow-sm transition sm:flex-row sm:items-center sm:justify-between'>
+                          {/* Left: Label */}
+                          <div className='flex items-center gap-45'>
+                            <span className='text-sm font-bold font-medium text-gray-900'>
+                              LED Strip 1
+                            </span>
+                          </div>
+
+                          {/* Middle: Aisle*/}
+                          <div className='flex items-center gap-45 text-sm font-semibold text-gray-900'>
+                            <span>Aisle 34</span>
+                          </div>
+
+                          {/* Middle: Scans*/}
+                          <div className='flex items-center gap-45 text-sm font-semibold text-gray-900'>
+                            <span>1.3k scans</span>
+                          </div>
+
+                          {/* Right: Last Scanned*/}
+                          <div className='flex items-center gap-3 text-sm text-gray-900'>
+                            <span className='font-semibold whitespace-nowrap'>
+                              Last scanned 12m ago
+                            </span>
+                          </div>
+                          {/* Right: Actions*/}
+                          <div className='flex items-center gap-3 text-sm text-gray-900'>
+                            <button
+                              className='hover:text-gray-600'
+                              title='Edit'
+                            >
+                              <FiEdit2 className='h-4 w-4' />
+                            </button>
+                            <button
+                              className='font-boldhover:text-gray-600'
+                              title='More'
+                            >
+                              ⋮
+                            </button>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </CardContent>
                 </Card>
 
                 {/* card 2 */}
+
+                <Card>
+                  <CardContent className='space-y-2 p-4'>
+                    <div className='flex items-center justify-between'>
+                      <div>
+                        <h2 className='mb-5 text-lg font-medium'>
+                          CinemaCity AFI Brasov
+                        </h2>
+                        <div className='flex gap-4 text-black'>
+                          <div className='flex flex-col rounded bg-gray-100 px-5 py-4 shadow-sm'>
+                            <span className='text-lg font-bold'>12</span>
+                            <span className='text-sm font-semibold'>
+                              lights
+                            </span>
+                          </div>
+                          <div className='flex flex-col rounded bg-gray-100 px-5 py-4 shadow-sm'>
+                            <span className='text-lg font-bold'>200 m²</span>
+                            <span className='text-sm font-semibold'>
+                              covered
+                            </span>
+                          </div>
+                          <div className='flex flex-col rounded bg-gray-100 px-5 py-4 shadow-sm'>
+                            <span className='font-bold'>
+                              1.7k scans this week
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
             </div>
           </main>
