@@ -30,7 +30,9 @@ export default function Page() {
               {/* header Row */}
               <div className='mb-4 flex items-center justify-between'>
                 <h1 className='text-2xl font-semibold'>Lights</h1>
-                <Button className='bg-blue-500 text-white'>+ Create</Button>
+                <Button className='bg-blue-500 text-white drop-shadow-[0_0_10px_rgba(96,165,250,0.8)]'>
+                  + Create
+                </Button>
               </div>
 
               {/* light count summary row */}
