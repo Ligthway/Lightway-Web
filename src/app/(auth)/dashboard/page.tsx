@@ -1,13 +1,14 @@
 'use client';
 
 import { AppSidebar } from '@/components/auth/app-sidebar';
-import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { SidebarInset, SidebarProvider } from '@/components/ui/sidebar';
 import { SiteHeader } from '@/components/ui/site-header';
 import { FiEdit2 } from 'react-icons/fi';
+import { MdLightbulbOutline } from 'react-icons/md';
+import { PiBracketsSquareLight } from 'react-icons/pi';
 
 export default function Page() {
   return (
@@ -30,23 +31,44 @@ export default function Page() {
               {/* header Row */}
               <div className='mb-4 flex items-center justify-between'>
                 <h1 className='text-2xl font-semibold'>Lights</h1>
-                <Button className='bg-blue-500 text-white drop-shadow-[0_0_10px_rgba(96,165,250,0.8)]'>
+                <Button className='rounded-full bg-blue-500 text-white drop-shadow-[0_0_10px_rgba(96,165,250,0.8)]'>
                   + Create
                 </Button>
               </div>
 
               {/* light count summary row */}
-              <div className='text-muted-foreground mb-3 text-sm'>
-                You have <strong>24 lights</strong> registered, covering{' '}
-                <strong>410m²</strong>.
+              <div className='text-muted-foreground mb-3 overflow-hidden text-sm text-ellipsis whitespace-nowrap'>
+                You have{' '}
+                <strong className='inline-flex items-center'>
+                  <MdLightbulbOutline className='mr-1' />
+                  24 lights
+                </strong>{' '}
+                registered, covering{' '}
+                <strong className='inline-flex items-center'>
+                  <PiBracketsSquareLight className='mr-1' />
+                  410m²
+                </strong>
+                .
               </div>
 
               {/* search + filters */}
-              <div className='mb-6 flex flex-wrap items-center gap-2'>
-                <Input placeholder='Search...' className='w-full max-w-xs' />
-                <Badge variant='default'>All</Badge>
-                <Badge variant='secondary'>Navigation systems</Badge>
-                <Badge variant='secondary'>Information</Badge>
+              <div className='mb-6 flex flex-wrap items-center gap-2 rounded-full'>
+                <Input
+                  placeholder='Search...'
+                  className='w-full max-w-xs rounded-full'
+                />
+                <Button
+                  variant='default'
+                  className='rounded-full bg-blue-500 drop-shadow-[0_0_10px_rgba(96,165,250,0.8)]'
+                >
+                  All
+                </Button>
+                <Button variant='secondary' className='rounded-full'>
+                  Navigation systems
+                </Button>
+                <Button variant='secondary' className='rounded-full'>
+                  Information
+                </Button>
               </div>
 
               {/* cards section */}
