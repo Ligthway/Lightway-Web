@@ -3,9 +3,11 @@
 import { AppSidebar } from '@/components/auth/app-sidebar';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import ScanChartCard from '@/components/ui/chart';
 import { Input } from '@/components/ui/input';
 import { SidebarInset, SidebarProvider } from '@/components/ui/sidebar';
 import { SiteHeader } from '@/components/ui/site-header';
+import { MousePointer, Pencil } from 'lucide-react';
 import { FiEdit2 } from 'react-icons/fi';
 import { MdLightbulbOutline } from 'react-icons/md';
 import { PiBracketsSquareLight } from 'react-icons/pi';
@@ -31,7 +33,7 @@ export default function Page() {
               {/* header Row */}
               <div className='mb-4 flex items-center justify-between'>
                 <h1 className='text-2xl font-semibold'>Lights</h1>
-                <Button className='rounded-full bg-blue-500 text-white drop-shadow-[0_0_10px_rgba(96,165,250,0.8)]'>
+                <Button className='rounded-full bg-blue-500 text-white drop-shadow-[0_0_5px_rgba(96,165,250,0.8)]'>
                   + Create
                 </Button>
               </div>
@@ -59,7 +61,7 @@ export default function Page() {
                 />
                 <Button
                   variant='default'
-                  className='rounded-full bg-blue-500 drop-shadow-[0_0_10px_rgba(96,165,250,0.8)]'
+                  className='rounded-full bg-blue-500 drop-shadow-[0_0_5px_rgba(96,165,250,0.8)]'
                 >
                   All
                 </Button>
@@ -78,9 +80,24 @@ export default function Page() {
                   <CardContent className='space-y-2 p-4'>
                     <div className='flex items-center justify-between'>
                       <div>
-                        <h2 className='mb-5 text-lg font-medium'>
-                          Carrefour AFI Brasov
-                        </h2>
+                        {/* Title and Navigation on same row */}
+                        <div className='mb-5 flex items-center gap-6'>
+                          <h2 className='text-lg font-medium'>
+                            Carrefour AFI Brasov
+                          </h2>
+                          <div className='ml-182 flex items-center gap-1 text-sm font-semibold text-blue-500 drop-shadow-[0_0_5px_rgba(96,165,250,0.8)]'>
+                            <MousePointer className='h-4 w-4' />
+                            Navigation System
+                          </div>
+                          <button
+                            className='font-boldhover:text-gray-600'
+                            title='More'
+                          >
+                            ⋮
+                          </button>
+                        </div>
+
+                        {/* Stats and Map */}
                         <div className='flex gap-4 text-black'>
                           <div className='flex flex-col rounded bg-gray-100 px-5 py-4 shadow-sm'>
                             <span className='text-lg font-bold'>12</span>
@@ -94,10 +111,17 @@ export default function Page() {
                               covered
                             </span>
                           </div>
-                          <div className='flex flex-col rounded bg-gray-100 px-5 py-4 shadow-sm'>
-                            <span className='font-bold'>
-                              2.5k scans this week
-                            </span>
+                          <ScanChartCard />
+                          <div className='relative flex flex-col rounded bg-gray-100 px-5 py-4 shadow-sm'>
+                            <div className='flex justify-end'>
+                              <button className='rounded bg-white px-3 py-1 text-sm font-semibold shadow-sm hover:bg-gray-200'>
+                                <div className='flex items-center gap-1 font-bold text-black'>
+                                  Manage Map
+                                  <Pencil className='h-4 w-4' />
+                                </div>
+                              </button>
+                            </div>
+                            {/* the actual map */}
                           </div>
                         </div>
                         <div className='mt-3 flex flex-col gap-45 rounded-xl bg-gray-100 p-3 shadow-sm transition sm:flex-row sm:items-center sm:justify-between'>
