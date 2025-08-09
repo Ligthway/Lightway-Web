@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 
 import { NavUser } from '@/components/nav-user';
+import Logo from '@/components/ui/logo';
 import {
   Sidebar,
   SidebarContent,
@@ -30,9 +31,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               className='data-[slot=sidebar-menu-button]:!p-1.5'
             >
               <a href='#' className='flex items-center gap-2'>
-                <div className='bg-white-500 rounded-full p-1'>
-                  {/*logo - to be replaced*/}
-                  <Lightbulb className='text-black-500 h-4 w-4' />
+                <div className='bg-white-500 rounded-full p-1 drop-shadow-[0_0_5px_rgba(96,165,250,0.8)]'>
+                  <Logo />
                 </div>
                 <span className='text-base font-semibold'>Lightway</span>
               </a>
@@ -41,7 +41,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         </SidebarMenu>
       </SidebarHeader>
 
-      <SidebarContent className='flex flex-1 flex-col gap-2'>
+      <SidebarContent className='mt-2 ml-2 flex flex-1 flex-col gap-2'>
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton asChild>
