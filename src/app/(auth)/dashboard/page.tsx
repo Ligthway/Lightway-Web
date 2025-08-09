@@ -8,11 +8,15 @@ import { Input } from '@/components/ui/input';
 import { SidebarInset, SidebarProvider } from '@/components/ui/sidebar';
 import { SiteHeader } from '@/components/ui/site-header';
 import { MousePointer, Pencil } from 'lucide-react';
+import { useState } from 'react';
 import { FiEdit2 } from 'react-icons/fi';
 import { MdLightbulbOutline } from 'react-icons/md';
 import { PiBracketsSquareLight } from 'react-icons/pi';
+import Modal from '@/components/ui/modal';
 
 export default function Page() {
+  const [isModalOpen, setModalOpen] = useState(false);
+
   return (
     <div className='bg-muted flex min-h-screen'>
       <SidebarProvider
@@ -127,10 +131,28 @@ export default function Page() {
                         <div className='mt-3 flex flex-col gap-45 rounded-xl bg-gray-100 p-3 shadow-sm transition sm:flex-row sm:items-center sm:justify-between'>
                           {/* Left: Label */}
                           <div className='flex items-center gap-45'>
-                            <span className='text-sm font-bold font-medium text-gray-900'>
+                            <span
+                              className='cursor-pointer text-sm font-bold text-gray-900 transition hover:text-blue-500'
+                              onClick={() => setModalOpen(true)}
+                            >
                               LED Strip 1
                             </span>
                           </div>
+
+                          <Modal
+                            isOpen={isModalOpen}
+                            onClose={() => setModalOpen(false)}
+                          >
+                            <h2 className='mb-4 text-2xl font-bold'>
+                              Detailed Light Overview
+                            </h2>
+                            <p className='mb-4 text-gray-700'>
+                              This is the larger card content.
+                            </p>
+                            <Button onClick={() => setModalOpen(false)}>
+                              Close
+                            </Button>
+                          </Modal>
 
                           {/* Middle: Aisle*/}
                           <div className='flex items-center gap-45 text-sm font-semibold text-gray-900'>
