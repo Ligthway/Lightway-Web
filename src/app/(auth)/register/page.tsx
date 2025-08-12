@@ -13,6 +13,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import validator from 'validator';
 import { z } from 'zod';
+import { useRegister } from '@/api/auth';
 
 const schema = z
   .object({
@@ -46,9 +47,10 @@ export default function () {
     mode: 'onBlur'
   });
 
+  const register = useRegister();
+
   function onSubmit(data: z.infer<typeof schema>) {
-    console.log('Form submitted:', data);
-    // Here you can handle the form submission, e.g., send data to an API
+    register.mutate(data);
   }
 
   return (
