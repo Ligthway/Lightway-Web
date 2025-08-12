@@ -1,4 +1,5 @@
 'use client';
+import { useLogin } from '@/api/auth';
 import { AuthLayout } from '@/components/auth/auth-layout';
 import { Button } from '@/components/ui/button';
 import {
@@ -35,9 +36,10 @@ export default function () {
     mode: 'onBlur'
   });
 
+  const login = useLogin();
+
   function onSubmit(data: z.infer<typeof schema>) {
-    console.log('Form submitted:', data);
-    // Here you can handle the form submission, e.g., send data to an API
+    login.mutate(data);
   }
 
   return (
