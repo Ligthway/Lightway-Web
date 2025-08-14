@@ -21,7 +21,7 @@ const data = [
 
 export default function ScanChartCardPositive() {
   return (
-    <div className='w-full rounded bg-gray-100 p-4 shadow-sm sm:w-auto'>
+    <div className='w-full rounded-xl bg-gray-100 p-4 shadow-sm sm:w-auto'>
       <div className='flex items-center gap-1 font-bold text-black'>
         2.5k scans this week
         <ArrowUpRight className='h-6 w-6' />

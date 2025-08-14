@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 
-export default function modalLayout({
+export default function ModalLayout({
   setModalOpen,
 }: {
   setModalOpen: (open: boolean) => void;

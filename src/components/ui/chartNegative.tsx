@@ -21,7 +21,7 @@ const data = [
 
 export default function ScanChartCardNegative() {
   return (
-    <div className='w-full rounded bg-gray-100 p-4 shadow-sm sm:w-auto'>
+    <div className='w-full rounded-xl bg-gray-100 p-4 shadow-sm sm:w-auto'>
       <div className='flex items-center gap-1 font-bold text-black'>
         1.7k scans this week
         <ArrowDown className='h-6 w-6' />
