@@ -1,4 +1,5 @@
 'use client';
+import { Button } from '@/components/ui/button';
 import {
   ChartColumnBig,
   LayoutDashboard,
@@ -17,7 +18,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem
 } from '@/components/ui/sidebar';
-import { IconBell, IconPlus } from '@tabler/icons-react';
+import { IconPlus } from '@tabler/icons-react';
 import Link from 'next/link';
 import * as React from 'react';
 
@@ -82,9 +83,14 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             <span className='text-muted-foreground text-xs'>12m</span>
           </div>
           <div className='text-muted-foreground text-xs'>at AFI Brasov</div>
-          <div className='mt-3 flex items-center gap-1 text-red-500'>
-            <IconBell size={14} />
-            <span className='text-xs font-semibold'>3 Notifications</span>
+          <div className='flex items-center gap-1 text-white p-2'>
+            <Button
+              className='flex h-5.5 w-5.5 items-center justify-center rounded-full p-2 text-xs font-light bg-red-400 hover:bg-red-500'
+              variant='destructive'
+            >
+              3
+            </Button>
+            <span className='text-s'>Notifications</span>
           </div>
         </div>
 

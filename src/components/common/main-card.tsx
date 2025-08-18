@@ -24,7 +24,7 @@ function LedRow({label, aisle, scans, lastScanned, onLabelClick }: RowProps) {
   return (
     <div className='grid w-full grid-cols-[1.5fr_1.5fr_1.5fr_3fr_auto] items-center rounded-xl bg-gray-100 p-3 shadow-sm'>
       <div className='flex items-center gap-2 cursor-pointer' onClick={onLabelClick}>
-        <img src="/public/images/Led.png" alt='led' className='h-5 w-5 object-contain' />
+        <img src='/images/Led.png' alt='led' className='h-7 w-7 object-contain p-0' />
         <span className='text-sm font-semibold text-gray-900'>{label}</span>
       </div>
 
