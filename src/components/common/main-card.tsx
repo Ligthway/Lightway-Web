@@ -7,31 +7,36 @@ import ModalLayout from '@/components/common/(modals)/layout';
 type MainCardProps = {
   title: string;
   subtitle?: string;
-  items: RowProps[];
+  items: LedData[];
   icon?: React.ReactNode;
   children?: React.ReactNode;
 };
 
-type RowProps = {
+type LedData = {
   label: string;
   aisle: string;
-  scans: string;
+  scans: number;
   lastScanned: string;
+  lightId: string;
+  lastEdit?: string;
+};
+
+type LedRowProps = LedData & {
   onLabelClick: () => void;
 };
 
-function LedRow({label, aisle, scans, lastScanned, onLabelClick }: RowProps) {
+function LedRow({label, aisle, scans, lastScanned, onLabelClick }: LedRowProps) {
   return (
     <div className='grid w-full grid-cols-[1.5fr_1.5fr_1.5fr_3fr_auto] items-center rounded-xl bg-gray-100 p-3 shadow-sm'>
       <div className='flex items-center gap-2 cursor-pointer' onClick={onLabelClick}>
         <img src='/images/Led.png' alt='led' className='h-7 w-7 object-contain p-0' />
-        <span className='text-sm font-semibold text-gray-900'>{label}</span>
+        <span className='text-sm font-semibold text-gray-900'>LED Light {label}</span>
       </div>
 
-      <span className='text-sm font-semibold text-gray-900'>{aisle}</span>
-      <span className='text-sm font-semibold text-gray-900'>{scans}</span>
+      <span className='text-sm font-semibold text-gray-900'>Aisle {aisle}</span>
+      <span className='text-sm font-semibold text-gray-900'>{scans}k scans</span>
       <span className='text-sm font-semibold text-gray-900'>
-        Last Scanned {lastScanned}
+        Last Scanned {lastScanned} ago
       </span>
       <div className='flex items-center justify-center gap-3'>
         <button className='hover:text-gray-600' title='Edit'>
@@ -56,9 +61,9 @@ export default function MainCard({
                                  }: MainCardProps & React.ComponentProps<typeof Card>) {
 
   const [modalOpen, setModalOpen] = useState(false);
-  const [selectedLed, setSelectedLed] = useState<RowProps | null>(null);
+  const [selectedLed, setSelectedLed] = useState<LedData | null>(null);
 
-  const handleLabelClick = (led: RowProps) => {
+  const handleLabelClick = (led: LedData) => {
     setSelectedLed(led);
     setModalOpen(true);
   };
@@ -83,18 +88,25 @@ export default function MainCard({
         {items.map((item, i) => (
           <LedRow
             key={i}
-            label={item.label}
-            aisle={item.aisle}
-            scans={item.scans}
-            lastScanned={item.lastScanned}
+            {...item}
             onLabelClick={() => handleLabelClick(item)}
           />
         ))}
+
         {selectedLed && (
           <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)}>
-            <ModalLayout setModalOpen={setModalOpen} />
+            <ModalLayout
+              label={selectedLed.label}
+              aisle={selectedLed.aisle}
+              scans={selectedLed.scans}
+              lastScanned={selectedLed.lastScanned}
+              lightId={selectedLed.lightId}
+              lastEdit={selectedLed.lastEdit ?? "Unknown"}
+              setModalOpen={setModalOpen}
+            />
           </Modal>
         )}
+
       </CardContent>
     </Card>
   );

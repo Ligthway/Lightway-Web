@@ -68,13 +68,14 @@ export default function Page() {
         subtitle="Navigation System"
         icon={<MousePointer size={18} />}
         items={[
-          { label: 'LED Light 1', aisle: 'Aisle 46', scans: '134', lastScanned: '2 hours ago', onLabelClick: () => setModalOpen(true) },
-          { label: 'LED Light 2', aisle: 'Aisle 73', scans: '89', lastScanned: '1 day ago', onLabelClick: () => setModalOpen(true) },
-          { label: 'LED Light 3', aisle: 'Aisle 14', scans: '56', lastScanned: '3 days ago', onLabelClick: () => setModalOpen(true) },
-          { label: 'LED Light 1', aisle: 'Aisle 45', scans: '13', lastScanned: '2 hours ago', onLabelClick: () => setModalOpen(true) },
-          { label: 'LED Light 2', aisle: 'Aisle 73', scans: '89', lastScanned: '1 day ago', onLabelClick: () => setModalOpen(true) },
-          { label: 'LED Light 3', aisle: 'Aisle 14', scans: '56', lastScanned: '3 days ago', onLabelClick: () => setModalOpen(true) },
+          { label: '1', aisle: '46', scans: 13, lastScanned: '2h', lightId: 'LGT-1A2B3C', lastEdit: '2d' },
+          { label: '2', aisle: '73', scans: 89, lastScanned: '1d', lightId: 'LGT-4D5E6F', lastEdit: '3d' },
+          { label: '3', aisle: '14', scans: 56, lastScanned: '3d', lightId: 'LGT-7G8H9I', lastEdit: '5h' },
+          { label: '4', aisle: '45', scans: 13, lastScanned: '2h', lightId: 'LGT-0J1K2L', lastEdit: '1d' },
+          { label: '5', aisle: '73', scans: 89, lastScanned: '1d', lightId: 'LGT-3M4N5O', lastEdit: '4d' },
+          { label: '6', aisle: '14', scans: 56, lastScanned: '3d', lightId: 'LGT-6P7Q8R', lastEdit: '6d' },
         ]}
+
       >
         {/*this is the random row of cards*/}
         <div className="flex gap-4 text-black p-2">
@@ -105,9 +106,10 @@ export default function Page() {
         subtitle="Information System"
         icon={<Text size={18} />}
         items={[
-          { label: 'LED Light 1', aisle: 'Aisle 43', scans: '134', lastScanned: '2 hours ago', onLabelClick: () => setModalOpen(true) },
-          { label: 'LED Light 2', aisle: 'Aisle 47', scans: '34', lastScanned: '1 day ago', onLabelClick: () => setModalOpen(true) },
+          { label: '1', aisle: '43', scans: 14, lastScanned: '2h', lightId: 'LGT-43A', lastEdit: '1h' },
+          { label: '2', aisle: '47', scans: 34, lastScanned: '1d', lightId: 'LGT-47B', lastEdit: '6h' },
         ]}
+
         className="flex items-center gap-4 rounded-xl bg-white p-4 shadow-xs"
       >
         {/*this is the random row of cards for the second card*/}
