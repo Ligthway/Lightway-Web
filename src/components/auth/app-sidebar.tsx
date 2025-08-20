@@ -1,6 +1,7 @@
 'use client';
 import { Button } from '@/components/ui/button';
 import {
+  Building2,
   ChartColumnBig,
   LayoutDashboard,
   Lightbulb,
@@ -63,6 +64,14 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <SidebarMenuItem>
             <SidebarMenuButton asChild>
               <Link href='#' className='flex items-center gap-2'>
+                <Building2 className='h-5 w-5 text-white/60' />
+                <span className='text-white'>Properties</span>
+              </Link>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+          <SidebarMenuItem>
+            <SidebarMenuButton asChild>
+              <Link href='#' className='flex items-center gap-2'>
                 <ChartColumnBig className='h-5 w-5 text-white/60' />
                 <span className='text-white'>Analytics</span>
               </Link>
@@ -83,9 +92,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             <span className='text-muted-foreground text-xs'>12m</span>
           </div>
           <div className='text-muted-foreground text-xs'>at AFI Brasov</div>
-          <div className='flex items-center gap-1 text-white p-2'>
+          <div className='flex items-center gap-1 p-2 text-white'>
             <Button
-              className='flex h-5.5 w-5.5 items-center justify-center rounded-full p-2 text-xs font-light bg-red-400 hover:bg-red-500'
+              className='flex h-5.5 w-5.5 items-center justify-center rounded-full bg-red-400 p-2 text-xs font-light hover:bg-red-500'
               variant='destructive'
             >
               3
