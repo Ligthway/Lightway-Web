@@ -1,6 +1,7 @@
 import ModalLayout from '@/components/common/(modals)/layout';
 import Modal from '@/components/common/(modals)/modal';
 import { Card, CardContent } from '@/components/ui/card';
+import { Lightbulb, Scan } from 'lucide-react';
 import { useState } from 'react';
 import { FiEdit2 } from 'react-icons/fi';
 
@@ -33,7 +34,7 @@ function LedRow({
   onLabelClick
 }: LedRowProps) {
   return (
-    <div className='grid w-full grid-cols-[1.5fr_1.5fr_1.5fr_3fr_auto] items-center rounded-xl bg-gray-100 p-3 shadow-sm'>
+    <div className='grid w-full grid-cols-[1.5fr_1.5fr_1.5fr_3fr_auto] items-center rounded-2xl bg-gray-100 p-3 shadow-sm'>
       <div
         className='flex cursor-pointer items-center gap-2'
         onClick={onLabelClick}
@@ -55,7 +56,7 @@ function LedRow({
       <span className='text-sm font-semibold text-gray-900'>
         Last Scanned {lastScanned} ago
       </span>
-      <div className='flex items-center justify-center gap-3'>
+      <div className='flex items-center justify-center gap-5'>
         <button className='hover:text-gray-600' title='Edit'>
           <FiEdit2 className='h-4 w-4' />
         </button>
@@ -84,11 +85,21 @@ export default function MainCard({
   };
 
   return (
-    <Card {...props} className='flex w-full gap-2 p-3'>
-      <CardContent className='flex flex-col gap-2'>
-        <div className='flex items-center justify-between'>
-          <h2 className='text-m p-0 font-bold font-medium'>{title}</h2>
-
+    <Card {...props} className='flex w-full gap-2 p-4'>
+      <CardContent className='flex flex-col gap-4'>
+        <div className='flex items-center justify-between gap-2.5'>
+          <h2 className='text-m font-bold font-medium'>{title}</h2>
+          <h2 className='text-m font-onest font-semibold'>•</h2>
+          <div className='flex items-center gap-4'>
+            <div className='flex items-center gap-1 text-sm'>
+              <Lightbulb className='h-3 w-3 font-bold' />
+              <span className='font-onest font-semibold'>12</span>
+            </div>
+            <div className='flex items-center gap-1 text-sm'>
+              <Scan className='h-3 w-3 font-bold' />
+              <span className='font-onest font-semibold'>200m²</span>
+            </div>
+          </div>
           <div className='ml-auto flex items-center gap-2 text-sm font-semibold text-blue-500 drop-shadow-[0_0_5px_rgba(96,165,250,0.8)]'>
             {icon && <span className='text-lg'>{icon}</span>}
             {subtitle}
