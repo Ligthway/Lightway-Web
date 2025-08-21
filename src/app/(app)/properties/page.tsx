@@ -16,11 +16,11 @@ export default function Page() {
           <div className='text-muted-foreground flex gap-1 overflow-hidden text-base font-semibold text-ellipsis whitespace-nowrap'>
             You are managing{' '}
             <span className='text-foreground flex items-center gap-1'>
-              <Lightbulb size={20} />4 properties
+              <Lightbulb size={16} />4 properties
             </span>{' '}
             registered, covering{' '}
             <span className='text-foreground flex items-center gap-1'>
-              <Scan size={20} />
+              <Scan size={16} />
               410m²
             </span>
             .

@@ -47,7 +47,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton asChild>
-              <Link href='#' className='flex items-center gap-2'>
+              <Link href='/dashboard' className='flex items-center gap-2'>
                 <LayoutDashboard className='h-5 w-5 text-white/60' />
                 <span className='text-white'>Dashboard</span>
               </Link>
@@ -63,7 +63,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           </SidebarMenuItem>
           <SidebarMenuItem>
             <SidebarMenuButton asChild>
-              <Link href='#' className='flex items-center gap-2'>
+              <Link href='/properties' className='flex items-center gap-2'>
                 <Building2 className='h-5 w-5 text-white/60' />
                 <span className='text-white'>Properties</span>
               </Link>
