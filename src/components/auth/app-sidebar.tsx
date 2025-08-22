@@ -1,15 +1,8 @@
 'use client';
-import { Button } from '@/components/ui/button';
-import {
-  Building2,
-  ChartColumnBig,
-  LayoutDashboard,
-  Lightbulb,
-  Settings
-} from 'lucide-react';
-
 import { cn } from '@/components/common/cn-helper';
+import NotificationCard from '@/components/common/notification-card';
 import { NavUser } from '@/components/nav-user';
+import { Button } from '@/components/ui/button';
 import Logo from '@/components/ui/logo';
 import {
   Sidebar,
@@ -21,6 +14,13 @@ import {
   SidebarMenuItem
 } from '@/components/ui/sidebar';
 import { IconPlus } from '@tabler/icons-react';
+import {
+  Building2,
+  ChartColumnBig,
+  LayoutDashboard,
+  Lightbulb,
+  Settings
+} from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import * as React from 'react';
@@ -113,32 +113,37 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
-
-        {/* spacer */}
         <div className='flex-1' />
       </SidebarContent>
 
-      {/* bottom section */}
       <div className='space-y-3 p-2'>
-        {/* Notification Card */}
-        <div className='rounded-lg bg-stone-900 p-3 text-sm shadow-sm'>
-          <div className='flex justify-between font-medium'>
-            <span className='text-white'>Ad Request from Sephora</span>
-            <span className='text-muted-foreground text-xs'>12m</span>
-          </div>
-          <div className='text-muted-foreground text-xs'>at AFI Brasov</div>
-          <div className='flex items-center gap-1 p-2 text-white'>
+        <div className='flex flex-col gap-3 rounded-[28px] bg-stone-900 p-3'>
+          <NotificationCard
+            title='Ad Request from Sephora'
+            time='12m'
+            location='at AFI Brasov'
+            stackIndex={0}
+          />
+          <NotificationCard
+            title='Ad Request from Nike'
+            time='18m'
+            location='at Mega Mall'
+            stackIndex={1}
+            offset
+          />
+          <div className='flow-row flex gap-2 rounded-xl'>
             <Button
               className='flex h-5.5 w-5.5 items-center justify-center rounded-full bg-red-400 p-2 text-xs font-light hover:bg-red-500'
               variant='destructive'
             >
-              3
+              2
             </Button>
-            <span className='text-s'>Notifications</span>
+            <span className='text-s font-onest text-sm text-white'>
+              Notifications
+            </span>
           </div>
         </div>
 
-        {/*  'add light' and 'settings' */}
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton asChild>
