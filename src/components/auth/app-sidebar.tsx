@@ -8,6 +8,7 @@ import {
   Settings
 } from 'lucide-react';
 
+import { cn } from '@/components/common/cn-helper';
 import { NavUser } from '@/components/nav-user';
 import Logo from '@/components/ui/logo';
 import {
@@ -21,9 +22,11 @@ import {
 } from '@/components/ui/sidebar';
 import { IconPlus } from '@tabler/icons-react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import * as React from 'react';
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const pathname = usePathname();
   return (
     <Sidebar collapsible='offcanvas' {...props} variant='inset'>
       <SidebarHeader>
@@ -47,7 +50,15 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton asChild>
-              <Link href='/dashboard' className='flex items-center gap-2'>
+              <Link
+                href='/dashboard'
+                className={cn(
+                  'flex items-center gap-2 rounded-md px-2 py-1',
+                  pathname === '/dashboard'
+                    ? 'bg-white/10 text-white'
+                    : 'text-white/60 hover:text-white'
+                )}
+              >
                 <LayoutDashboard className='h-5 w-5 text-white/60' />
                 <span className='text-white'>Dashboard</span>
               </Link>
@@ -55,7 +66,15 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           </SidebarMenuItem>
           <SidebarMenuItem>
             <SidebarMenuButton asChild className='rounded-md'>
-              <Link href='#' className='flex items-center gap-2'>
+              <Link
+                href='/lights'
+                className={cn(
+                  'flex items-center gap-2 rounded-md px-2 py-1',
+                  pathname === '/lights'
+                    ? 'bg-white/10 text-white'
+                    : 'text-white/60 hover:text-white'
+                )}
+              >
                 <Lightbulb className='h-5 w-5 text-white/60' />
                 <span className='text-white'>Lights</span>
               </Link>
@@ -63,7 +82,15 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           </SidebarMenuItem>
           <SidebarMenuItem>
             <SidebarMenuButton asChild>
-              <Link href='/properties' className='flex items-center gap-2'>
+              <Link
+                href='/properties'
+                className={cn(
+                  'flex items-center gap-2 rounded-md px-2 py-1',
+                  pathname === '/properties'
+                    ? 'bg-white/10 text-white'
+                    : 'text-white/60 hover:text-white'
+                )}
+              >
                 <Building2 className='h-5 w-5 text-white/60' />
                 <span className='text-white'>Properties</span>
               </Link>
@@ -71,7 +98,15 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           </SidebarMenuItem>
           <SidebarMenuItem>
             <SidebarMenuButton asChild>
-              <Link href='#' className='flex items-center gap-2'>
+              <Link
+                href='/analytics'
+                className={cn(
+                  'flex items-center gap-2 rounded-md px-2 py-1',
+                  pathname === '/analytics'
+                    ? 'bg-white/10 text-white'
+                    : 'text-white/60 hover:text-white'
+                )}
+              >
                 <ChartColumnBig className='h-5 w-5 text-white/60' />
                 <span className='text-white'>Analytics</span>
               </Link>
