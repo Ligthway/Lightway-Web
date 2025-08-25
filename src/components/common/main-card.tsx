@@ -86,7 +86,7 @@ export default function MainCard({
 
   return (
     <Card {...props} className='flex w-full gap-2 p-4'>
-      <CardContent className='flex flex-col gap-4'>
+      <CardContent className='flex flex-col gap-2'>
         <div className='flex items-center justify-between gap-2.5'>
           <h2 className='text-m font-bold font-medium'>{title}</h2>
           <h2 className='text-m font-onest font-semibold'>•</h2>
@@ -120,7 +120,7 @@ export default function MainCard({
         ))}
 
         {selectedLed && (
-          <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)}>
+          <Modal isOpen={modalOpen}>
             <ModalLayout
               label={selectedLed.label}
               aisle={selectedLed.aisle}
