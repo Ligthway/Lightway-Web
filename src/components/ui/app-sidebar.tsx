@@ -50,18 +50,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton asChild>
-              <Link
-                href='/dashboard'
-                className={cn(
-                  'flex items-center gap-2 rounded-md px-2 py-1',
-                  pathname === '/dashboard'
-                    ? 'bg-white/10 text-white'
-                    : 'text-white/60 hover:text-white'
-                )}
-              >
-                <LayoutDashboard className='h-5 w-5 text-white/60' />
-                <span className='text-white'>Dashboard</span>
-              </Link>
+
             </SidebarMenuButton>
           </SidebarMenuItem>
           <SidebarMenuItem>
@@ -81,20 +70,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             </SidebarMenuButton>
           </SidebarMenuItem>
           <SidebarMenuItem>
-            <SidebarMenuButton asChild>
-              <Link
-                href='/properties'
-                className={cn(
-                  'flex items-center gap-2 rounded-md px-2 py-1',
-                  pathname === '/properties'
-                    ? 'bg-white/10 text-white'
-                    : 'text-white/60 hover:text-white'
-                )}
-              >
-                <Building2 className='h-5 w-5 text-white/60' />
-                <span className='text-white'>Properties</span>
-              </Link>
-            </SidebarMenuButton>
+
           </SidebarMenuItem>
           <SidebarMenuItem>
             <SidebarMenuButton asChild>
